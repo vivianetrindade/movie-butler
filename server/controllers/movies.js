@@ -1,11 +1,11 @@
 require('dotenv').config();
 const axios = require('axios');
 
-exports.getMovieById = async (req, res) => {
-    const movieId = req.params.id;
-    console.log(movieId, 'movieId');
+exports.getMovieByGenre = async (req, res) => {
+    const movieGenre = req.params.genre;
+    console.log(movieGenre, 'movieId');
     console.log(process.env.SECRET_KEY, );
-        axios.get(`http://www.omdbapi.com/?apikey=${process.env.SECRET_KEY}&i=${movieId}`)
+        axios.get(`https://imdb-api.com/API/AdvancedSearch/${process.env.SECRET_KEY}?user_rating=7.0,10&genres=${movieGenre}`)
         .then(response => {
             res.status(200).json(response.data);
         })
