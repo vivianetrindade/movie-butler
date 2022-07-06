@@ -3,8 +3,6 @@ const axios = require('axios');
 
 exports.getMovieByGenre = async (req, res) => {
     const movieGenre = req.params.genre;
-    console.log(movieGenre, 'movieId');
-    console.log(process.env.SECRET_KEY, );
         axios.get(`https://imdb-api.com/API/AdvancedSearch/${process.env.SECRET_KEY}?user_rating=7.0,10&genres=${movieGenre}`)
         .then(response => {
             res.status(200).json(response.data);

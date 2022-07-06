@@ -6,6 +6,7 @@ const Catalog = ({ movies = [{id:"tt1312171",
                             title: "The Umbrella Academy",
                             imDbRating:"8.0"
                         }] }) => {
+            console.log('rendering Catalog');
     return (
         <section className="catalog">
             {movies.map(movie => (
