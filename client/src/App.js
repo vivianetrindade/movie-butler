@@ -1,36 +1,30 @@
 import './App.css';
+import { BrowserRouter, Route, Routes  } from "react-router-dom";
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Catalog from './components/Catalog';
-import Search from './components/Search';
-import { useState, useEffect } from 'react';
+import Movies from './pages/Movies';
+import Series from './pages/Series';
+import Search from './pages/Search';
+import Info from './pages/Info';
+//import SearchComponent from './components/SearchComponent';
+// import { useState, useEffect } from 'react';
 
 function App() {
 
-  const [movies, setMovies] = useState([]);
 
-  useEffect(() => {
-    console.log("useEffect");
-    fetch(`http://localhost:8080/api/v1/movies/action`)
-    .then(res => res.json())
-    .then(data => {
-      console.log(data.results);
-        setMovies(data.results);
-    })
-    .catch(err => console.log(err));
-}, []);
-
-  const onCatalogChange = (movies) => {
-    console.log("catalogchange: ", movies);
-    setMovies(movies);
-  }
 
   return (
     <div className="App">
-      <Header />
-      <Search onCatalogChange={onCatalogChange}/>
-      <Catalog movies={movies}/>
-      <Footer />
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/search" element={<Search />}></Route>
+          <Route path="/movies" element={<Movies />}></Route>
+          <Route path="/series" element={<Series />}></Route>
+          <Route path="/info/:id" element={<Info />}></Route>
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }

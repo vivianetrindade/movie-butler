@@ -1,0 +1,67 @@
+{"results":[
+    {"id":"tt1190634",
+    "image":"https://imdb-api.com/images/original/MV5BOTEyNDJhMDAtY2U5ZS00OTMzLTkwODktMjU3MjFkZWVlMGYyXkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_Ratio0.7857_AL_.jpg",
+    "title":"The Boys","description":"(2019– )",
+    "runtimeStr":"60 min",
+    "genres":"Action, Crime, Drama",
+    "genreList":[
+        {"key":"Action","value":"Action"},
+        {"key":"Crime","value":"Crime"},
+        {"key":"Drama","value":"Drama"}],
+    "contentRating":"TV-MA",
+    "imDbRating":"8.7",
+    "imDbRatingVotes":"403196",
+    "metacriticRating":null,
+    "plot":"A group of vigilantes set out to take down corrupt superheroes who abuse their superpowers.",
+    "stars":"Karl Urban, Jack Quaid, Antony Starr, Erin Moriarty",
+    "starList":[
+        {"id":"tt1190634","name":"Karl Urban"},
+        {"id":"tt1190634","name":"Jack Quaid"},
+        {"id":"tt1190634","name":"Antony Starr"},
+        {"id":"tt1190634","name":"Erin Moriarty"}
+        ]},
+    {"id":"tt1312171",
+    "image":"https://imdb-api.com/images/original/MV5BOTdlODM0MTAtMzRiZi00MTQxLWE0MGUtNTNjOGZjNjAzN2E0XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_Ratio0.7857_AL_.jpg",
+    "title":"The Umbrella Academy",
+    "description":"(2019–2022)",
+    "runtimeStr":"60 min",
+    "genres":"Action, Adventure, Comedy",
+    "genreList":[
+        {"key":"Action","value":"Action"},
+        {"key":"Adventure","value":"Adventure"},
+        {"key":"Comedy","value":"Comedy"}
+        ],
+    "contentRating":"TV-14",
+    "imDbRating":"8.0",
+    "imDbRatingVotes":"220824",
+    "metacriticRating":null,
+    "plot":"A family of former child heroes, now grown apart, must reunite to continue to protect the world.",
+    "stars":"Elliot Page, Tom Hopper, David Castañeda, Emmy Raver-Lampman",
+    "starList":[
+        {"id":"tt1312171","name":"Elliot Page"},
+        {"id":"tt1312171","name":"Tom Hopper"},
+        {"id":"tt1312171","name":"David Castañeda"},
+        {"id":"tt1312171","name":"Emmy Raver-Lampman"}]},
+    {"id":"tt1745960",
+    "image":"https://imdb-api.com/images/original/MV5BOWQwOTA1ZDQtNzk3Yi00ZmVmLWFiZGYtNjdjNThiYjJhNzRjXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_Ratio0.6837_AL_.jpg",
+    "title":"Top Gun: Maverick",
+    "description":"(2022)",
+    "runtimeStr":"130 min",
+    "genres":"Action, Drama",
+    "genreList":[
+        {"key":"Action","value":"Action"},
+        {"key":"Drama","value":"Drama"
+            }],
+        "contentRating":"PG-13",
+        "imDbRating":"8.6",
+        "imDbRatingVotes":"215847",
+        "metacriticRating":"78",
+        "plot":"After more than thirty years of service as one of the Navy's top aviators, Pete Mitchell is where he belongs, pushing the envelope as a courageous test pilot and dodging the advancement in rank that would ground him.",
+        "stars":"Joseph Kosinski, Tom Cruise, Jennifer Connelly, Miles Teller, Val Kilmer",
+        "starList":[
+            {"id":"tt1745960","name":"Joseph Kosinski"},
+            {"id":"tt1745960","name":"Tom Cruise"},
+            {"id":"tt1745960","name":"Jennifer Connelly"},
+            {"id":"tt1745960","name":"Miles Teller"},
+            {"id":"tt1745960","name":"Val Kilmer"}]}
+]}
