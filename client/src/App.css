@@ -67,11 +67,12 @@ a{
   overflow: hidden;
   width: 200px;
   padding-bottom: 0.5rem;
-  
+  height: 400px;
 }
 .movie:hover{
   box-shadow: 3px 3px 5px rgba(102, 101, 101, 0.3);
   background-color: gray;
+  cursor: pointer;
 }
 
 .movie__image{
@@ -81,6 +82,7 @@ a{
 }
 .movie__title{
   margin: 0rem;
+  text-align: left;
 }
 .movie__info{
   display: flex;
@@ -88,22 +90,20 @@ a{
   justify-content: space-between;
   padding: 0.5rem;
   font-weight: 700;
-  height: 40px;
+  height: 50px;
+  margin-top: 0.8rem;
 }
 
 .magnify{
   width: 1.5rem;
-  cursor: pointer;
 }
 
 .movie__logo{
   width: 1.5rem;
-  cursor: pointer;
 }
 
 .tv__icon{
   width: 1.5rem;
-  cursor: pointer;
 }
 
 @keyframes spinner {
