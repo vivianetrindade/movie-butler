@@ -1,6 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
+
+h1, h2, h3, p{
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+}
+
 
 .App-header {
   display: flex;
@@ -170,6 +183,39 @@ a{
   letter-spacing: 0.1rem;
   margin-left: 1rem;
   box-shadow: 16px 21px 5px -15px rgba(0,0,0,0.55);
+}
+.catalog__watchlist {
+  margin: 1.5rem;
+}
+.watchlist{
+  display: flex;
+  margin: 2rem 0;
+  background-color: #253148;
+  border-radius: 5px;
+}
+.moviefavorites__info{
+  text-align: justify;
+  margin: 0 2rem;
+  padding: 1.2rem 0;
+}
+.moviefavorites__info h2, h3, h4, p {
+  margin-bottom: 1.3rem;
+}
+.moviefavorites__info button {
+  border-radius: 5px;
+  background-color: #39445a;
+  color: white;
+  padding: 0.3rem;
+  font-weight: 700;
+  border: none;
+  text-align: center;
+  transition: 0.2s;
+  letter-spacing: 0.1rem;
+  margin-left: 1rem;
+  box-shadow: 16px 21px 5px -15px rgba(0,0,0,0.55);
+  position: relative;
+  top: 3rem;
+  left: 30rem;
 }
 .App-footer{
   position: fixed;

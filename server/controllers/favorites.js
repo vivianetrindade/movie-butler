@@ -7,7 +7,7 @@ exports.getFavorites = async (req, res) => {
   try {
     const collection = await connectToDatabase();
     const favoritesMovies = await collection.find({}).toArray();
-    console.log(favoritesMovies);
+
     res.status(200).json(favoritesMovies);
   } catch (error) {
     console.log(error)
@@ -30,6 +30,10 @@ exports.postFavorites = async (req, res) => {
       description: favoriteMovie.plot,
       image: favoriteMovie.image,
       stars: favoriteMovie.stars,
+      imDbRating: favoriteMovie.imDbRating,
+      runTimeStr: favoriteMovie.runtimeStr,
+      genres: favoriteMovie.genres,
+      type: favoriteMovie.type,
       user: favoriteMovie.user
     }
     const newFavorite = await collection.insertOne(favMovInfo);

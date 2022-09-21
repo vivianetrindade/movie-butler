@@ -6,6 +6,7 @@ import Movies from './pages/Movies';
 import Series from './pages/Series';
 import Search from './pages/Search';
 import Info from './pages/Info';
+import WatchList from './pages/WatchList'
 //import SearchComponent from './components/SearchComponent';
 // import { useState, useEffect } from 'react';
 
@@ -18,10 +19,11 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/search" element={<Search />}></Route>
+          <Route path="/" element={<Search />}></Route>
           <Route path="/movies" element={<Movies />}></Route>
           <Route path="/series" element={<Series />}></Route>
           <Route path="/info/:id" element={<Info />}></Route>
+          <Route path='/wanttowatch' element={<WatchList/>}></Route>
         </Routes>
         <Footer />
       </BrowserRouter>
