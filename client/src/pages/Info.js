@@ -26,7 +26,7 @@ const Info = ( ) => {
                 <div className="movie__desc">
                 <p className='p'>Description: {movie.plot}</p> <br/>
                 <p className='p'>Imdb Rating: {movie.imDbRating}</p> <br/>
-                <p className='p'>Release year:{movie.year}</p>
+                <p className='p'>Release year: {movie.year}</p>
                 <p className='p'>Genres: {movie.genres}</p>
             </div>
         </div>

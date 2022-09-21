@@ -1,6 +1,8 @@
 const express = require('express');
 const moviesController = require('./controllers/movies.js');
-const cors = require('cors')
+const favoritesController = require('./controllers/favorites');
+const cors = require('cors');
+
 
 const app = express();
 const port = 8080;
@@ -16,6 +18,10 @@ app.get('/api/v1/movies/:genre', moviesController.getMovieByGenre);
 app.get('/api/v1/top250tv', moviesController.getTop250Tv);
 
 app.get('/api/v1/movies/byid/:id', moviesController.getMovieByID);
+
+app.get('/api/favoritesmovies', favoritesController.getFavorites);
+
+app.post('/api/favoritesmovies', favoritesController.postFavorites);
 
 // Don't change the code above this line!
 // Write your enpoints here
