@@ -23,6 +23,8 @@ app.get('/api/favoritesmovies', favoritesController.getFavorites);
 
 app.post('/api/favoritesmovies', favoritesController.postFavorites);
 
+app.delete('/api/favoritesmovies/:id/:user', favoritesController.deleteFavorites);
+
 // Don't change the code above this line!
 // Write your enpoints here
 

@@ -1,6 +1,7 @@
 require('dotenv').config();
 const axios = require('axios');
 const { connectToDatabase, client } = require('./dbConnection');
+const mongodb = require('mongodb');
 
 exports.getFavorites = async (req, res) => {
 
@@ -37,13 +38,38 @@ exports.postFavorites = async (req, res) => {
       user: favoriteMovie.user
     }
     const newFavorite = await collection.insertOne(favMovInfo);
-    res.status(201).json(newFavorite)
+    res.status(201).json(newFavorite);
   } catch (error) {
-    console.log(error)
+    console.log(error);
     res.status(500).json({message: 'Error to include the movie.'});
   } finally {
     if(client) {
-      await client.close()
+      await client.close();
     }
   }
+}
+
+exports.deleteFavorites = async (req, res) => {
+  const id = req.params.id;
+  const user = req.params.user;
+
+  try {
+    const collection = await connectToDatabase();
+    const result = await collection.deleteOne({_id: new mongodb.ObjectId(id), user: user});
+    
+    if (result && result.deletedCount) {
+      res.status(202).json({message: 'Successfully deleted'});
+    } else if (!result){
+      res.status(400).json({message: 'Failed to delete todo.'});
+    } else if (!result.deletedCount) {
+      res.status(404).json({message: 'Movie or serie not found.'});
+    }
+  } catch (error) {
+    res.status(400).json({message: error});
+  } finally {
+    if(client) {
+      await client.close();
+    }
+  }
+
 }
