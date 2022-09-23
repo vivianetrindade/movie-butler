@@ -19,7 +19,7 @@ app.get('/api/v1/top250tv', moviesController.getTop250Tv);
 
 app.get('/api/v1/movies/byid/:id', moviesController.getMovieByID);
 
-app.get('/api/favoritesmovies', favoritesController.getFavorites);
+app.get('/api/favoritesmovies/:user', favoritesController.getFavorites);
 
 app.post('/api/favoritesmovies', favoritesController.postFavorites);
 

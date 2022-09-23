@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
 import {useNavigate} from "react-router-dom";
+import { useAuth0 } from '@auth0/auth0-react';
 
 
 const WatchList = () => {
   const [list, setList] = useState([]);
-
+  const { user } = useAuth0()
   const navigate = useNavigate();
 
   useEffect(()=> {
-    fetch('http://localhost:8080/api/favoritesmovies')
+    fetch(`http://localhost:8080/api/favoritesmovies/${user.email}`)
     .then((res)=> res.json())
     .then(data => setList(data))
-  }, [])
+  }, [user.email])
 
   const handleRemove = (id, user) => {
     fetch(`http://localhost:8080/api/favoritesmovies/${id}/${user}`, {

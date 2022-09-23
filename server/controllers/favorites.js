@@ -4,15 +4,15 @@ const { connectToDatabase, client } = require('./dbConnection');
 const mongodb = require('mongodb');
 
 exports.getFavorites = async (req, res) => {
-
+  const user = req.params.user;
   try {
     const collection = await connectToDatabase();
-    const favoritesMovies = await collection.find({}).toArray();
+    const favoritesMovies = await collection.find({user: user}).toArray();
 
     res.status(200).json(favoritesMovies);
   } catch (error) {
     console.log(error)
-    res.status(500).json({message: 'Failed to find want to wathc movies!'})
+    res.status(500).json({message: 'Failed to find want to watch movie or serie!'})
   }finally {
     if(client) {
       await client.close();
@@ -35,7 +35,7 @@ exports.postFavorites = async (req, res) => {
       runTimeStr: favoriteMovie.runtimeStr,
       genres: favoriteMovie.genres,
       type: favoriteMovie.type,
-      user: favoriteMovie.user
+      user: favoriteMovie.userMail
     }
     const newFavorite = await collection.insertOne(favMovInfo);
     res.status(201).json(newFavorite);
