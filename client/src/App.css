@@ -55,6 +55,10 @@ a{
   flex-direction: column;
   align-items: center;
 }
+.search{
+  margin-top: 2rem;
+}
+
 .search__input{
   width: 90%;
   padding: 1rem;
@@ -70,6 +74,15 @@ a{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.box{
+  margin-top: 2rem;
+}
+
+.box h2{
+  margin-bottom: 2rem;
+  font-size: 32px;
 }
 
 .movie{
@@ -171,7 +184,7 @@ a{
   height: 100px;
   margin: 0.5rem;
 }
-.movie__button{
+.movie__button, .login{
   border-radius: 5px;
   background-color: #39445a;
   color: white;
@@ -183,6 +196,10 @@ a{
   letter-spacing: 0.1rem;
   margin-left: 1rem;
   box-shadow: 16px 21px 5px -15px rgba(0,0,0,0.55);
+}
+
+.movie__butto:hover, .login:hover {
+  cursor: pointer;
 }
 .catalog__watchlist {
   margin: 1.5rem;
@@ -216,6 +233,9 @@ a{
   position: relative;
   top: 3rem;
   left: 30rem;
+}
+.moviefavorites__info button:hover{
+  cursor: pointer;
 }
 .App-footer{
   position: fixed;

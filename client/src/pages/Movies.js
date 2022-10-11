@@ -19,14 +19,14 @@ const Movies = () => {
       .catch(err => console.log(err));
   }, []);
   return (
-    <>
+    <div className="box">
     <h2>Top 250 Movies</h2>
     <section className="catalog">
       {movies && movies.map(movie => (
         <Movie key={movie.id} movie={movie} />
       ))}
     </section>
-    </>
+    </div>
   );
 }
 export default Movies;

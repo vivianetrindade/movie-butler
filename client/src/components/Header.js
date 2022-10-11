@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import magnify from '../magnifying-glass (1).png';
-import butler from '../waiter (1).png';
-import movie from '../movie.png';
-import tv from '../television.png';
+import magnify from '../assets/magnifying-glass (1).png';
+import butler from '../assets/waiter (1).png';
+import movie from '../assets/movie.png';
+import tv from '../assets/television.png';
 import { Film } from 'react-bootstrap-icons';
 import { useAuth0 } from '@auth0/auth0-react';
 
@@ -38,8 +38,8 @@ const Header = () => {
             <Link to='/wanttowatch'>Want to Watch</Link>
           </div>
           <div className='navigation__icon'>
-            {!isAuthenticated ? <button onClick={loginWithRedirect}>Login</button> : 
-              <button onClick={logout}>Logout</button> }
+            {!isAuthenticated ? <button onClick={loginWithRedirect} className='login'>Login</button> : 
+              <button onClick={logout} className='login'>Logout</button> }
             
           </div>
           </nav>

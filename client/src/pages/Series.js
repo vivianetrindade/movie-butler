@@ -18,14 +18,14 @@ const Series = () => {
     }, []);
 
     return (
-        <>
+        <div className="box">
         <h2>Top 250 Series</h2>
         <section className="catalog">
             {series && series.map(serie => (
                 <Serie key={serie.id} serie={serie} />
             ))}
         </section>
-        </>
+        </div>
     );
 }
 export default Series;
