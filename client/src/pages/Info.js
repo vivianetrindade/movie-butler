@@ -7,30 +7,36 @@ const Info = ( ) => {
     const [errorMessage, setErrorMessage] = useState('');
     const [status, setStatus] = useState({})
 
-    const { isAuthenticated, loginWithRedirect, user } = useAuth0();
+    const { isAuthenticated, loginWithRedirect, user, getAccessTokenSilently } = useAuth0();
 
     const params = useParams();
     const movieId = params.id;
-    console.log(movieId, 'movie');
 
     useEffect(() => {
         fetch(`http://localhost:8080/api/v1/movies/byid/${movieId}`)
         .then(res => res.json())
         .then(data => {
-            const dataWithuser = {...data, userMail: user.email }
-            setMovie(dataWithuser);
+            if(isAuthenticated) {
+                setMovie({...data, userMail: user.email})
+            } else {
+                setMovie(data);
+            }
         })
         .catch(err => console.log(err));
+       
     }, [movieId]);
     
-
-    const handleClick = () => {
-        console.log('clicked');
+    
+    const handleClick = async() => {
         
         if(isAuthenticated){
+            const token = await getAccessTokenSilently();
+            console.log(token, 'clicked');
             fetch('http://localhost:8080/api/favoritesmovies', {
                 method: 'POST',
-                headers: {'Content-Type': 'application/json'},
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    'Content-Type': 'application/json'},
                 body: JSON.stringify(movie)
             })
             .then(res => res.json())
@@ -46,7 +52,7 @@ const Info = ( ) => {
             loginWithRedirect();
         }
     }
-    console.log(movie, 'info');
+    
     return (
         <section className="section__info">
         <h2>{movie.title}</h2>
@@ -67,7 +73,7 @@ const Info = ( ) => {
         </div>
         <div className="actors__info">
             {movie && movie.actorList && movie.actorList.map(actor => (
-                <div className='container__actor'>
+                <div className='container__actor' key={actor.id}>
                     <img className='actor__img'src={actor.image} alt={actor.name} />
                     <p>{actor.name}</p>
                 </div>

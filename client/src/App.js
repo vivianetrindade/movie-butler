@@ -32,6 +32,8 @@ function App() {
       domain="dev-u9kq7hje.us.auth0.com"
       clientId="3Qu6wTEbtADwKPYf5FvrfkyMjCu7hVgp"
       redirectUri={window.location.origin}
+      audience="http://localhost:8080"
+      scope="openid profile email"
       >
         <Header />
         <Routes>
